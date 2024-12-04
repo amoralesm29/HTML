@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5</title>
+</head>
+<body>
+    <header>
+        <h1>Multimedia en HTML5</h1>
+    </header>
+
+    <main>
+        <section id="video">
+            <h2>Video</h2>
+            <video id="video1" width="600" controls poster="poster.jpg">
+                <source src="video.mp4" type="video/mp4">
+                <source src="video.webm" type="video/webm">
+            </video>
+
+                <script>
+                    let video = document.getElementById("video1");
+                    video.onclick = function () {
+                        if (!video.paused && !video.ended) {
+                            video.pause();
+                        } else {
+                        video.play();
+                        }
+                    }
+                </script>
+        </section>
+
+        <!-- Sección de Audio -->
+        <section id="audio">
+            <h2>Audio</h2>
+            <audio id="audio1" controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                <source src="audio.ogg" type="audio/ogg">
+            </audio>
+            <button onclick="toggleAudio()">Reproducir / Pausar</button>
+            <script>
+                function toggleAudio() {
+                    const audio = document.getElementById('audio1');
+                    if (audio.paused || audio.ended) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                }
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho por Arturo Morales</p>
+    </footer>
+</body>
+</html>
